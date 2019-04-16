@@ -16,112 +16,67 @@
     <link href="css/style.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
-
+    
 <body>
-
-    <!--Main Navigation-->
-    <header>
-
+    <header> 
     <?php require('header.php') ?>
-
     </header>
-    <!--Main Navigation-->
-
-    <!--Main layout-->
     <main class="mt-5 pt-5">
         <div class="container">
-
             <hr class="my-5">
-
-            <!-- Section: Contact v.3 -->
-<section class="contact-section my-5">
-
+    <section class="contact-section my-5">
         <!-- Form with header -->
         <div class="card">
-      
-          <!-- Grid row -->
-          <div class="row">
-      
-            <!-- Grid column -->
+                <div class="row">
             <div class="col-lg-8">
-      
               <div class="card-body form">
-      
-                <!-- Header -->
                 <h3 class="mt-4"><i class="fas fa-envelope pr-2"></i>Write to us:</h3>
-      
-                <!-- Grid row -->
                 <div class="row">
-      
-                  <!-- Grid column -->
                   <div class="col-md-6">
                     <div class="md-form mb-0">
-                      <input type="text" id="form-contact-name" class="form-control">
-                      <label for="form-contact-name" class="">Your name</label>
+                      <input autocomplete="off" id="name" name="name" type="text" id="form-contact-name" class="form-control">
+                      <label  for="form-contact-name" class="">Имя</label>
                     </div>
                   </div>
-                  <!-- Grid column -->
-      
-                  <!-- Grid column -->
                   <div class="col-md-6">
                     <div class="md-form mb-0">
-                      <input type="text" id="form-contact-email" class="form-control">
-                      <label for="form-contact-email" class="">Your email</label>
+                      <input  id="email"  type="text" id="form-contact-email" class="form-control">
+                      <label for="form-contact-email" class="">Email</label>
                     </div>
                   </div>
-                  <!-- Grid column -->
-      
                 </div>
-                <!-- Grid row -->
-      
-                <!-- Grid row -->
                 <div class="row">
-      
-                  <!-- Grid column -->
                   <div class="col-md-6">
                     <div class="md-form mb-0">
-                      <input type="text" id="form-contact-phone" class="form-control">
-                      <label for="form-contact-phone" class="">Your phone</label>
+                      <input id="subject" name="subject" type="text" id="form-contact-phone" class="form-control">
+                      <label for="form-contact-phone" class="">Тема сообщения</label>
                     </div>
                   </div>
-                  <!-- Grid column -->
-      
-                  <!-- Grid column -->
                   <div class="col-md-6">
                     <div class="md-form mb-0">
                       <input type="text" id="form-contact-company" class="form-control">
                       <label for="form-contact-company" class="">Your company</label>
                     </div>
                   </div>
-                  <!-- Grid column -->
-      
                 </div>
-                <!-- Grid row -->
-      
-                <!-- Grid row -->
-                <div class="row">
-      
-                  <!-- Grid column -->
-                  <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-12">
                     <div class="md-form mb-0">
-                      <textarea id="form-contact-message" class="form-control md-textarea" rows="3"></textarea>
-                      <label for="form-contact-message">Your message</label>
-                      <a class="btn-floating btn-lg mdb-color darken-2">
+                      <textarea  id="message" name="message"  class="form-control md-textarea" rows="3"></textarea>
+                      <label for="form-contact-message">Ваше сообщение</label>
+                      <a id="done" value="Отправить" class="btn-floating btn-lg mdb-color darken-2">
                         <i class="far fa-paper-plane"></i>
                       </a>
+                      <div id="messageShow" class="for-error"></div>
                     </div>
                   </div>
-                  <!-- Grid column -->
-      
                 </div>
-                <!-- Grid row -->
-      
               </div>
-      
-            </div>
-            <!-- Grid column -->
-      
+            </div>      
             <!-- Grid column -->
             <div class="col-lg-4">
       
@@ -157,20 +112,12 @@
                     </a>
                   </li>
                 </ul>
-      
               </div>
-      
             </div>
-            <!-- Grid column -->
-      
           </div>
-          <!-- Grid row -->
-      
         </div>
-        <!-- Form with header -->
       
       </section>
-      <!-- Section: Contact v.3 -->
             <hr class="my-5">
         </div>
     </main>
