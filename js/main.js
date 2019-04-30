@@ -8,7 +8,8 @@ window.addEventListener('load', function () {
             document.getElementById(element).style.borderBottomColor = '#ced4da';
         });
     });
-    
+
+
     $("#done").click(function () {
         let fail = [];
 

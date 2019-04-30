@@ -1,3 +1,7 @@
+<?php 
+   require_once "functions.php";
+   $news = getNews(6);
+?>
 <!-- Navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
          <!-- Brand -->
