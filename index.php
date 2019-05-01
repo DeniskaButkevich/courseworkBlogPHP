@@ -33,27 +33,28 @@
                 <li data-target="#carousel-example-2" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
-                <?php
-               for($i = 0; $i < 3; $i++){
-                  if($i==0)
-                     echo '<div class="carousel-item active">';
-                  else
-                     echo '<div class="carousel-item">';
-                  echo '<div class="view">
-                     <img class="d-block w-100" src="img/slider/'. ($i+1) .'.jpg"
-                        alt="First slide">
-                     <div class="mask rgba-black-light"></div>
+   
+               <?php $sliderNews = getSliderNews(); 
+
+                  for($i = 0; $i < count($sliderNews); $i++){ ?>
+                     
+                     <div class="carousel-item<?php if($i == 0) echo " active"?>">
+                     <div class="view">
+                        <img class="d-block w-100"
+                         src="img/slider/<?php echo $sliderNews[$i]{"id"}?>.jpg"
+                           alt="First slide">
+                        <div class="mask rgba-black-light"></div>
+                     </div>
+                     <div class="carousel-caption">
+                        <h1 class="carousel-h1"><?php echo $sliderNews[$i]{"h1_text"}?></h1>
+                        <h2 class="carousel-h2"><?php echo $sliderNews[$i]{"h2_text"}?></h2>
+                        <h3 class="carousel-h3"></h3>
+                        <div></div>
+                        <a class="carousel-a" href="post-page.php"><p>Читать</p></a>
+                     </div>
                   </div>
-                  <div class="carousel-caption">
-                     <h1 class="carousel-h1">Почему Ruby — идеальный язык для начинающего разработчика</h1>
-                     <h2 class="carousel-h2">Руководитель и стратег в студии веб-дизайна и контент-маркетинга Svoemedia Александра Иващенко рассказала блогу Нетологии, как её команда использует Tilda в работе.</h2>
-                     <h3 class="carousel-h3"></h3>
-                     <div></div>
-                     <a class="carousel-a" href="post-page.php"><p>Читать</p></a>
-                  </div>
-               </div>';
-               }   
-            ?>
+               <?php } ?>   
+
             </div>
             <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -72,20 +73,25 @@
                 <section class="text-center">
                     <div class="row mb-4 wow fadeIn">
                         <?php
-                     
-                           $p = isset($_GET["p"]) ? (int) $_GET["p"] : 0;
+                           global $p;
+                           if(empty($_GET["p"])){
+                              $p = 1;
+                           }else{
+                              $p = isset($_GET["p"]) ? (int) $_GET["p"] : 0;
+                           }
+                          
 
                            $news = getNews($p);
 
                            for($i = 0; $i < count($news); $i++) {
                               if($i%3 == 0)
                                  echo '</div><div class="row mb-4 wow fadeIn">';
-
-                              echo '
-                              <div class="col-lg-4 col-md-12 mb-4">
+                              
+                              echo '<div class="col-lg-4 col-md-12 mb-4">'; ?> 
+                                 
                                  <div class="card">
                                     <div class="view overlay">
-                                       <img class="card-img-top" src="img/items/'.$news[$i]{"id"}.'.jpg"
+                                       <img class="card-img-top" src="img/items/<?php echo $news[$i]{"id"}?>.jpg"
                                           alt="Card image cap">
                                        <a href="post-page.php">
                                           <div class="mask rgba-white-slight"></div>
@@ -94,9 +100,9 @@
                                     <a href="post-page.php" class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i
                                           class="fas fa-chevron-right pl-1"></i></a>
                                     <div class="card-body">
-                                       <h4 class="card-title">'.$news[$i]{"title"}.'</h4>
+                                       <h4 class="card-title"><?php echo $news[$i]{"title"}?></h4>
                                        <hr>
-                                       <p class="card-text">'.$news[$i]{"intro_text"}.'</p>
+                                       <p class="card-text"><?php echo $news[$i]{"intro_text"}?></p>
                                     </div>
                                     <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
                                        <ul class="list-unstyled list-inline font-small">
@@ -112,9 +118,8 @@
                                        </ul>
                                     </div>
                                  </div>
-                              </div>';
-                           }
-                     ?>
+                              </div>
+                        <?php } ?>
 
                 </section>
                 <nav class="d-flex justify-content-center wow fadeIn"

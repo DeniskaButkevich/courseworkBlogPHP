@@ -5,12 +5,14 @@
     if($last_page < 1){
     $last_page = 1;
     }
+    $p = 1;
 
     $mysql_connect = false;
     function connectDB () {
         global $mysql_connect;
         $mysql_connect = new mysqli("localhost","root","","blogbd");
         $mysql_connect->query('SET NAMES "utf8"');
+        
     }
 
     function closeDB () {
@@ -25,6 +27,14 @@
         global $mysql_connect;
         connectDB();
         $result = $mysql_connect->query("SELECT id, title, intro_text FROM news $limit");
+        closeDB();
+        return resultToArray ($result);
+    }
+
+    function getSliderNews(){
+        global $mysql_connect;
+        connectDB();
+        $result = $mysql_connect->query("SELECT id, h1_text, h2_text FROM slider");
         closeDB();
         return resultToArray ($result);
     }
