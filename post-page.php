@@ -150,7 +150,7 @@
                   <input type="email" id="replyFormEmail" class="form-control">
 
                   <div class="text-center mt-4">
-                    <button class="btn btn-info btn-md" type="submit">Post</button>
+                    <button class="btn btn-info btn-md btn-light" type="submit">Post</button>
                   </div>
                 </form>
               </div>
@@ -169,7 +169,7 @@
                   <label for="defaultFormNameEx" class="grey-text">Your name</label>
                   <input type="text" id="defaultFormNameEx" class="form-control">
                   <div class="text-center mt-4">
-                    <button class="btn btn-info btn-md" type="submit">Sign up</button>
+                    <button class="btn btn-info btn-md btn-light" type="submit">Sign up</button>
                   </div>
                 </form>
               </div>

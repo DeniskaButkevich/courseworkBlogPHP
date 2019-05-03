@@ -19,7 +19,7 @@
                 <div class="row">
             <div class="col-lg-8">
               <div class="card-body form">
-                <h3 class="mt-4"><i class="fas fa-envelope pr-2"></i>Write to us:</h3>
+                <h3 class="mt-4"><i class="fas fa-envelope pr-2"></i>Напишите нам:</h3>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="md-form mb-0">
@@ -44,7 +44,7 @@
                   <div class="col-md-6">
                     <div class="md-form mb-0">
                       <input type="text" id="form-contact-company" class="form-control">
-                      <label for="form-contact-company" class="">Your company</label>
+                      <label for="form-contact-company" class="">Ваша компания</label>
                     </div>
                   </div>
                 </div>
@@ -67,7 +67,7 @@
       
               <div class="card-body contact text-center h-100 white-text">
       
-                <h3 class="my-4 pb-2">Contact information</h3>
+                <h3 class="my-4 pb-2">Контакты</h3>
                 <ul class="text-lg-left list-unstyled ml-4">
                   <li>
                     <p><i class="fas fa-map-marker-alt pr-2"></i>New York, 94126, USA</p>

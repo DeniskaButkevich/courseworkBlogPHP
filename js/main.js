@@ -45,5 +45,10 @@ window.addEventListener('load', function () {
             }
         });
     });
+    let pagination = document.c
+    window.onload = function()
+    {
+    window.scrollTo( 0, 550 );
+    }
 });
 // ced4da

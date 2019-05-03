@@ -2,7 +2,7 @@
 <!-- Navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <!-- Brand -->
-    <a class="navbar-brand waves-effect my-class" href="index.php?p=1">
+    <a class="navbar-brand waves-effect my-class" href="index.php">
         <strong style="color: #2e3951!important;">MDB</strong>
     </a>
     <div class="container">

@@ -36,7 +36,7 @@
                      </div>
                      <div class="carousel-caption">
                         <h1 class="carousel-h1">
-                            <a href="post-page.php?id=<?php echo $sliderNews{"id"}?>"><?php echo $sliderNews{"title"}?></a>
+                            <a class="title_main" href="post-page.php?id=<?php echo $sliderNews{"id"}?>"><?php echo $sliderNews{"title"}?></a>
                         </h1>
                         <h2 class="carousel-h2"><?php echo $sliderNews{"intro_text"}?></h2>
                         <h3 class="carousel-h3"></h3>
@@ -114,7 +114,7 @@
                 </section>
                 <nav class="d-flex justify-content-center wow fadeIn"
                     style="visibility: visible; animation-name: fadeIn;">
-                    <ul class="pagination pg-blue">
+                    <ul id="pagination" class="pagination pg-blue">
                         <li class="page-item <?php if($p == 1) echo " disabled"?>">
                             <a class="page-link waves-effect waves-effect" href="?p=<?= $p-1?>" aria-label="Previous">
                                 <span aria-hidden="true">«</span>
