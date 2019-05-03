@@ -4,22 +4,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+
+    <title>Главная</title>
+    <?php require_once "head.php"; ?>
 </head>
 
 <body>
@@ -34,23 +21,27 @@
             </ol>
             <div class="carousel-inner" role="listbox">
    
-               <?php $sliderNews = getSliderNews(); 
-
-                  for($i = 0; $i < count($sliderNews); $i++){ ?>
-                     
+               <?php 
+                $arr_rand = range(1, NumNews());
+                shuffle($arr_rand);        
+                  for($i = 0; $i < 3; $i++){ 
+                    $sliderNews = getNew ($arr_rand[$i]); 
+                ?>
                      <div class="carousel-item<?php if($i == 0) echo " active"?>">
                      <div class="view">
                         <img class="d-block w-100"
-                         src="img/slider/<?php echo $sliderNews[$i]{"id"}?>.jpg"
+                         src="img/slider/<?php echo $sliderNews{"id"}?>.jpg"
                            alt="First slide">
                         <div class="mask rgba-black-light"></div>
                      </div>
                      <div class="carousel-caption">
-                        <h1 class="carousel-h1"><?php echo $sliderNews[$i]{"h1_text"}?></h1>
-                        <h2 class="carousel-h2"><?php echo $sliderNews[$i]{"h2_text"}?></h2>
+                        <h1 class="carousel-h1">
+                            <a href="post-page.php?id=<?php echo $sliderNews{"id"}?>"><?php echo $sliderNews{"title"}?></a>
+                        </h1>
+                        <h2 class="carousel-h2"><?php echo $sliderNews{"intro_text"}?></h2>
                         <h3 class="carousel-h3"></h3>
                         <div></div>
-                        <a class="carousel-a" href="post-page.php"><p>Читать</p></a>
+                        <a class="carousel-a" href="post-page.php?id=<?php echo $sliderNews{"id"}?>"><p>Читать</p></a>
                      </div>
                   </div>
                <?php } ?>   
@@ -79,8 +70,7 @@
                            }else{
                               $p = isset($_GET["p"]) ? (int) $_GET["p"] : 0;
                            }
-                          
-
+      
                            $news = getNews($p);
 
                            for($i = 0; $i < count($news); $i++) {
@@ -93,11 +83,11 @@
                                     <div class="view overlay">
                                        <img class="card-img-top" src="img/items/<?php echo $news[$i]{"id"}?>.jpg"
                                           alt="Card image cap">
-                                       <a href="post-page.php">
+                                       <a href="post-page.php?id=<?php echo  $news[$i]{"id"}?>">
                                           <div class="mask rgba-white-slight"></div>
                                        </a>
                                     </div>
-                                    <a href="post-page.php" class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i
+                                    <a href="post-page.php?id=<?php echo  $news[$i]{"id"}?>" class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i
                                           class="fas fa-chevron-right pl-1"></i></a>
                                     <div class="card-body">
                                        <h4 class="card-title"><?php echo $news[$i]{"title"}?></h4>
@@ -149,19 +139,7 @@
         </div>
     </main>
     <?php require('footer.php')  ?>
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Initializations -->
-    <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
-    </script>
+    
 </body>
 
 </html>

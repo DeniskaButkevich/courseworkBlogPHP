@@ -31,10 +31,19 @@
         return resultToArray ($result);
     }
 
+    function getNew ($id) {
+        global $mysql_connect;
+        connectDB();
+        $where = "WHERE `id` = ".$id;
+        $result = $mysql_connect->query("SELECT * FROM `news` $where");
+        closeDB();
+        return $result->fetch_assoc();
+    }
+
     function getSliderNews(){
         global $mysql_connect;
         connectDB();
-        $result = $mysql_connect->query("SELECT id, h1_text, h2_text FROM slider");
+        $result = $mysql_connect->query("SELECT * FROM slider");
         closeDB();
         return resultToArray ($result);
     }

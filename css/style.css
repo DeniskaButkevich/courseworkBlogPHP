@@ -4,7 +4,7 @@
 .btn-action{
   position: absolute;
   right: 0px;
-  top: 48%;
+  top: 189px;
   width: 50px;
     height: 50px;
     border-radius: 35px;
@@ -101,4 +101,29 @@ ul.navbar-nav.mr-auto {
   text-align: center;
   display: inline-block;
   margin: auto;
+}
+.pg-blue .active a{
+  background-color: #929fba!important
+  
+}
+.about_text{
+  text-align: center;
+}
+
+.section-title-divider {
+  height: 2px;
+  border: 2px solid #2e3951;
+  width: 117px;
+  display: inline-block;
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+a{
+  color: white;
+}
+a:hover{
+  color: white;
+}
+.waves-light{
+  background-color: #929fba!important
 }
