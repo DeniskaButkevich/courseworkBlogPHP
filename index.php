@@ -1,17 +1,17 @@
-<?php require_once "functions.php"; ?>
+<?php require_once "function/functions.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <title>Главная</title>
-    <?php require_once "head.php"; ?>
+    <title><?php  $title = "Неотология"; echo $title; ?></title>
+    <?php require_once "function/head.php"; ?>
 </head>
 
 <body>
     <header>
-        <?php require('header.php') ?>
+        <?php require('function/header.php') ?>
 
         <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -138,7 +138,7 @@
             </div>
         </div>
     </main>
-    <?php require('footer.php')  ?>
+    <?php require('function/footer.php')  ?>
     
 </body>
 

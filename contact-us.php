@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <title>Связаться с нами</title>
-    <?php require_once "head.php"; ?>
+    <title><?php  $title = "Связаться с нами"; echo $title; ?></title>
+    <?php require_once "function/head.php"; ?>
 </head>
     
 <body>
     <header> 
-    <?php require('header.php') ?>
+    <?php require('function/header.php') ?>
     </header>
-    <main class="mt-5 pt-5">
+    <main id="for_footer" class="mt-5 pt-5">
         <div class="container">
             <hr class="my-5">
-    <section class="contact-section my-5 wow fadeIn">
+    <section  class="contact-section my-5 wow fadeIn">
         <!-- Form with header --> 
         <div class="card">
                 <div class="row">
@@ -67,7 +67,7 @@
       
               <div class="card-body contact text-center h-100 white-text">
       
-                <h3 class="my-4 pb-2">Контакты</h3>
+                <h3 class="my-4 pb-2">Контакты  </h3>
                 <ul class="text-lg-left list-unstyled ml-4">
                   <li>
                     <p><i class="fas fa-map-marker-alt pr-2"></i>New York, 94126, USA</p>
@@ -109,7 +109,7 @@
     <!--Main layout-->
 
     <!--Footer-->
-    <?php require('footer.php')  ?>
+    <?php require('function/footer.php')  ?>
     <!--/.Footer-->
 
     <!-- SCRIPTS -->

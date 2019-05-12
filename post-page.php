@@ -1,19 +1,19 @@
 <?php 
-    require_once "functions.php";
+    require_once "function/functions.php";
     $new_on_page = getNew($_GET["id"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title><?php echo $new_on_page{"title"}?></title>
-  <?php require_once "head.php"; ?>
+  <title><?php $title = $new_on_page{"title"}; echo $title;?></title>
+  <?php require_once "function/head.php"; ?>
 </head>
 
 <body class="grey lighten-3">
 
   <header>
-  <?php require('header.php') ?>
+  <?php require('function/header.php') ?>
   </header>
 
   <main class="mt-5 pt-5">
@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-md-8 mb-4">
             <div class="card mb-4 wow fadeIn">
-              <img src="img/slider/<?php echo $new_on_page{"id"}?>.jpg" class="img-fluid" alt="">
+              <img  src="img/slider/<?php echo $new_on_page{"id"}?>.jpg" class="img-fluid" alt="">
             </div>
             <!--Card-->
 
@@ -209,7 +209,7 @@
     </div>
   </main>
   <!--Footer-->
-  <?php require('footer.php')  ?>
+  <?php require('function/footer.php')  ?>
 </body>
 
 </html>

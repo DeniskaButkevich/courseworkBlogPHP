@@ -127,17 +127,9 @@ a:hover{
 .waves-light{
   background-color: #929fba!important
 }
-.pressed_footer{
-  position: relative;
-  min-height: 100%;
+#about {
+  min-height: calc(100vh - 231px);
 }
-.pre_footer{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-.pressed_footer h2{
-  margin-top: 10%;
-  font-size: 72px;
+#for_footer {
+  min-height: calc(100vh - 219px);
 }

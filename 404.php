@@ -3,7 +3,7 @@
 
 <head>
     <title>404</title>
-    <?php require_once "head.php"; ?>
+    <?php require_once "function/head.php"; ?>
 
 </head>
 
@@ -25,7 +25,7 @@
             </div>
     </div>
     <div class="pre_footer">
-        <?php require('footer.php')  ?>
+        <?php require('function/footer.php')  ?>
     </div>
 </body>
 
